@@ -2,8 +2,9 @@
 #include "netio.h"
 #include <imtjson/rpc.h>
 #include <thread>
+#include "netio.h"
 
-namespace quark {
+namespace jsonrpc_client {
 
 using namespace json;
 
@@ -40,7 +41,7 @@ public:
 
 protected:
 
-	void worker(jsonrpc_client::PNetworkConection conn);
+	void worker(PNetworkConection conn);
 
 
 	String addr;

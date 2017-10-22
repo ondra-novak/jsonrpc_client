@@ -5,8 +5,7 @@
  *      Author: ondra
  */
 
-#ifndef LIGHTCOUCH_MINIHTTP_ABSTRACTIO_H_
-#define LIGHTCOUCH_MINIHTTP_ABSTRACTIO_H_
+#pragma once
 
 #include <imtjson/refcnt.h>
 #include <cstring>
@@ -338,4 +337,3 @@ protected:
 }
 
 
-#endif /* LIGHTCOUCH_MINIHTTP_ABSTRACTIO_H_ */

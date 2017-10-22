@@ -5,9 +5,7 @@
  *      Author: ondra
  */
 
-#ifndef LIGHTCOUCH_MINIHTTP_NETIO_H_
-#define LIGHTCOUCH_MINIHTTP_NETIO_H_
-
+#pragma once
 #include <imtjson/refcnt.h>
 #include <imtjson/stringview.h>
 #include <stdint.h>
@@ -98,4 +96,3 @@ typedef json::RefCntPtr<NetworkConnection> PNetworkConection;
 }
 
 
-#endif /* LIGHTCOUCH_MINIHTTP_NETIO_H_ */

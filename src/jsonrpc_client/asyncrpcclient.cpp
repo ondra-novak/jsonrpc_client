@@ -20,7 +20,7 @@
 
 
 
-namespace quark {
+namespace jsonrpc_client {
 
 using namespace jsonrpc_client;
 
