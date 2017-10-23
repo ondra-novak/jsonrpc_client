@@ -72,7 +72,7 @@ void simpleFmt(std::ostream &stream, Value json, int spaces = 0) {
 }
 
 
-class RpcClient: public quark::RpcClient {
+class RpcClient: public jsonrpc_client::RpcClient {
 public:
 	virtual void onNotify(const Notify &ntf) override {
 		std::cout<<"NOTIFY: " << ntf.eventName << " " ;
