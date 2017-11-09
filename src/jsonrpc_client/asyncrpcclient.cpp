@@ -145,6 +145,7 @@ void RpcClient::worker(PNetworkConection conn) {
 		}
 	}
 	Sync _(lock);
+	logTrafic(true,Value());
 	connected = false;
 	rejectAllPendingCalls();
 	this->conn = nullptr;
