@@ -103,6 +103,8 @@ json::BinaryView NetworkConnection::doRead(bool nonblock) {
 		return AbstractInputStream::eofConst;
 	} else {
 		int err = errno;
+		if (err == ECONNRESET || err == ECONNREFUSED || err == ECONNABORTED)
+			return 0;
 		if (err != EWOULDBLOCK && err != EINTR && err != EAGAIN) {
 			lastRecvError = err;
 			eofFound = true;
@@ -139,9 +141,7 @@ bool NetworkConnection::doWaitWrite(int  timeout_in_ms) {
 		} else if (r == 0) {
 			return false;
 		} else {
-			if (poll_list[0].revents & POLLOUT) {
-				return true;
-			}
+			return true;
 		}
 
 	} while (true);
@@ -190,9 +190,7 @@ bool NetworkConnection::doWaitRead(int timeout_in_ms) {
 		} else if (r == 0) {
 			return false;
 		} else {
-			if (poll_list[0].revents & (POLLIN|POLLRDHUP)) {
-				return true;
-			}
+			return true;
 		}
 
 	} while (true);
