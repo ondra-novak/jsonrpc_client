@@ -103,11 +103,7 @@ json::BinaryView NetworkConnection::doRead(bool nonblock) {
 		return AbstractInputStream::eofConst;
 	} else {
 		int err = errno;
-<<<<<<< HEAD
 		if (err == ECONNRESET || err == ECONNREFUSED || err == ECONNABORTED)
-=======
-		if (err == ECONNRESET || err == ECONNREFUSED || ECONNABORTED)
->>>>>>> branch 'master' of https://github.com/ondra-novak/jsonrpc_client
 			return 0;
 		if (err != EWOULDBLOCK && err != EINTR && err != EAGAIN) {
 			lastRecvError = err;
